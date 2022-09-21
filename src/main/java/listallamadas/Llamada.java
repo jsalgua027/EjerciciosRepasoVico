@@ -113,7 +113,7 @@ public class Llamada {
         return "Llamada{" + "identificativo=" + identificativo + ", numeroOrigen=" + numeroOrigen + ", numeroDestino=" + numeroDestino + ", inicioLlamada=" + inicioLlamada + ", finLlamda=" + finLlamda + '}';
     }
     
-   // metodo generar llamdas 
+   // metodo generar llamdas, este metodo va a pedir directamente por Scanner los datos para crear una 
     
     public Llamada generarLlamda(){
      Llamada aux = new Llamada();
