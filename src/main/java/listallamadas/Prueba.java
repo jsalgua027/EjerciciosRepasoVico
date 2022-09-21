@@ -5,6 +5,7 @@
 package listallamadas;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -17,11 +18,14 @@ public class Prueba {
      */
     public static void main(String[] args) {
         ArrayList <Llamada> listaLlamadas = new ArrayList<>();
-        
-        
-        System.out.println("Le vamos a solicitar los siguentes datos");
-        
-        
+        Scanner menu = new Scanner(System.in);
+      boolean control= true;
+      
+     Llamada primera= new Llamada();
+     
+     primera.generarLlamda();
+        System.out.println("*******************************************************");
+        System.out.println(primera);
     }
     
 }

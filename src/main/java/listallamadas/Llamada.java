@@ -5,7 +5,9 @@
 package listallamadas;
 
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.Objects;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -13,14 +15,17 @@ import java.util.Scanner;
  * @author nacho
  */
 public class Llamada {
-   private String identificativo;
-   private String numeroOrigen;
-   private String numeroDestino;
-   private LocalDateTime inicioLlamada;
-   private LocalDateTime finLlamda;
 
-    public Llamada(String identificativo, String numeroOrigen, String numeroDestino, LocalDateTime inicioLlamada, LocalDateTime finLlamda) {
-        this.identificativo = identificativo;
+    /* lo ideal es quwe los numeros identificativos sean un String pero por simplicidad 
+     voy a generar un entero aleatorio, a la persona que le solicito los datos de la llamada no tiene porque saber el número de ID */
+    private int identificativo;
+    private String numeroOrigen;
+    private String numeroDestino;
+    private LocalDateTime inicioLlamada;
+    private LocalDateTime finLlamda;
+
+    public Llamada(int identificativo, String numeroOrigen, String numeroDestino, LocalDateTime inicioLlamada, LocalDateTime finLlamda) {
+        this.identificativo = (int) (Math.random() * 50 + 1);
         this.numeroOrigen = numeroOrigen;
         this.numeroDestino = numeroDestino;
         this.inicioLlamada = inicioLlamada;
@@ -30,11 +35,11 @@ public class Llamada {
     public Llamada() {
     }
 
-    public String getIdentificativo() {
+    public int getIdentificativo() {
         return identificativo;
     }
 
-    public void setIdentificativo(String identificativo) {
+    public void setIdentificativo(int identificativo) {
         this.identificativo = identificativo;
     }
 
@@ -112,15 +117,46 @@ public class Llamada {
     public String toString() {
         return "Llamada{" + "identificativo=" + identificativo + ", numeroOrigen=" + numeroOrigen + ", numeroDestino=" + numeroDestino + ", inicioLlamada=" + inicioLlamada + ", finLlamda=" + finLlamda + '}';
     }
-    
-   // metodo generar llamdas, este metodo va a pedir directamente por Scanner los datos para crear una 
-    
-    public Llamada generarLlamda(){
-     Llamada aux = new Llamada();
-        //Scanner pedirDatos = new Scanner();
-    
-    
-    return aux;
-   
+
+    public LocalDateTime generarFecha() {
+        Scanner datos = new Scanner(System.in);
+        int anio, mes, dia, hora, minutos, segundos;
+
+        System.out.println("Vamos a ver la fecha de la llamada");
+        System.out.println("Indique el año= ");
+        anio = datos.nextInt();
+        System.out.println("Indique el  numero de mes= ");
+        mes = datos.nextInt();
+        System.out.println("Indique el dia= ");
+        dia = datos.nextInt();
+        System.out.println("Vamos a ver la hora exacta de la llamada");
+        System.out.println("Indique la hora= ");
+        hora = datos.nextInt();
+        System.out.println("Indique los minutos = ");
+        minutos = datos.nextInt();
+        System.out.println("Indique los segundos = ");
+        segundos = datos.nextInt();
+        LocalDateTime fechaAux = LocalDateTime.of(anio, mes, dia, hora, minutos, segundos);
+
+        return fechaAux;
+    }
+
+    // metodo generar llamdas, este metodo va a pedir directamente por Scanner los datos para crear una llamada;
+    public Llamada generarLlamda() {
+        Scanner entrada = new Scanner(System.in);// entrada de datos
+        Llamada auxLlamada = new Llamada();// objeto Llamada que va a devolver el metodo
+        int numeroId = (int) (Math.random() * 50 + 1);
+        this.identificativo = numeroId;
+        System.out.println("Indique el número de  teléfono de origen");
+        this.numeroOrigen = entrada.nextLine();
+        System.out.println("FECHA Y HORA ORIGEN");
+        this.inicioLlamada=generarFecha();
+        System.out.println("Indique el número de teléfono de destino");
+        this.numeroDestino=entrada.nextLine();
+         System.out.println("FECHA Y HORA DESTINO");
+        this.finLlamda=generarFecha();
+
+        return auxLlamada;
+
     }
 }
