@@ -117,8 +117,8 @@ public class Llamada {
     public String toString() {
         return "Llamada{" + "identificativo=" + identificativo + ", numeroOrigen=" + numeroOrigen + ", numeroDestino=" + numeroDestino + ", inicioLlamada=" + inicioLlamada + ", finLlamda=" + finLlamda + '}';
     }
-
-    public LocalDateTime generarFecha() {
+        // el método generarFechaLlamada genera sirve para generar las fechas y horas que necesito para generar las llamadas
+    public LocalDateTime generarFechaLlamada() {
         Scanner datos = new Scanner(System.in);
         int anio, mes, dia, hora, minutos, segundos;
 
@@ -142,7 +142,7 @@ public class Llamada {
     }
 
     // metodo generar llamdas, este metodo va a pedir directamente por Scanner los datos para crear una llamada;
-    public Llamada generarLlamda() {
+    public Llamada generarLlamada() {
         Scanner entrada = new Scanner(System.in);// entrada de datos
         Llamada auxLlamada = new Llamada();// objeto Llamada que va a devolver el metodo
         int numeroId = (int) (Math.random() * 50 + 1);
@@ -150,11 +150,11 @@ public class Llamada {
         System.out.println("Indique el número de  teléfono de origen");
         this.numeroOrigen = entrada.nextLine();
         System.out.println("FECHA Y HORA ORIGEN");
-        this.inicioLlamada=generarFecha();
+        this.inicioLlamada=generarFechaLlamada();
         System.out.println("Indique el número de teléfono de destino");
         this.numeroDestino=entrada.nextLine();
          System.out.println("FECHA Y HORA DESTINO");
-        this.finLlamda=generarFecha();
+        this.finLlamda=generarFechaLlamada();
 
         return auxLlamada;
 
