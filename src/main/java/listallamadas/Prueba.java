@@ -30,12 +30,14 @@ public class Prueba {
         System.out.println("Bienvenido al registro de llamadas");
         System.out.println("1.para introducir los datos de cada llamada");
         System.out.println("2.para salir del menu");
-        opcion = datos.nextInt();
+       
         do {
+             opcion = datos.nextInt();
             switch (opcion) {
                 case 1:
                    
                     System.out.println("A seleccionado introducir datos, comencemos!!!");
+                    
 
                     break;
                 case 2:
