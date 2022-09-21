@@ -6,6 +6,7 @@ package listallamadas;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Scanner;
 
 /**
  *
@@ -112,6 +113,14 @@ public class Llamada {
         return "Llamada{" + "identificativo=" + identificativo + ", numeroOrigen=" + numeroOrigen + ", numeroDestino=" + numeroDestino + ", inicioLlamada=" + inicioLlamada + ", finLlamda=" + finLlamda + '}';
     }
     
+   // metodo generar llamdas 
+    
+    public Llamada generarLlamda(){
+     Llamada aux = new Llamada();
+        //Scanner pedirDatos = new Scanner();
+    
+    
+    return aux;
    
-   
+    }
 }
