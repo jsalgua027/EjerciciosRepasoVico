@@ -58,6 +58,7 @@ public class ListaLlamadas {
     //metodo que recibe llamada y generas una lista de llamadas
     public ArrayList<Llamada> generarRegistroLlamadas(Llamada aux) {
         ArrayList<Llamada> registroAux = new ArrayList<>();
+       
         Scanner datos = new Scanner(System.in);
         int opcion = 0; //variable de control del menu
         System.out.println("Bienvenido al registro de llamadas");
@@ -66,7 +67,12 @@ public class ListaLlamadas {
 
         switch (opcion) {
             case 1:
-
+                    do{
+                        aux.generarLlamada();
+                        registroAux.add(aux);
+                        
+                    }while(registroAux.size()<4);
+                     
                 break;
             case 2:
                 System.out.println("A seleccionado salir del menu");
