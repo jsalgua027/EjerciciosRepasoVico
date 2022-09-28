@@ -16,6 +16,11 @@ public class ListaLlamadas {
 
     private ArrayList<Llamada> registroLlamadas;
 
+    public ListaLlamadas() {
+    }
+    
+    
+
     public ListaLlamadas(ArrayList<Llamada> registroLlamadas) {
         this.registroLlamadas = registroLlamadas;
     }
@@ -56,22 +61,22 @@ public class ListaLlamadas {
     }
 
     //metodo que recibe llamada y generas una lista de llamadas
-    public ArrayList<Llamada> generarRegistroLlamadas(Llamada aux) {
+    public ArrayList<Llamada> generarRegistroLlamadas() {
         ArrayList<Llamada> registroAux = new ArrayList<>();
-       
+       Llamada aux = new Llamada();
         Scanner datos = new Scanner(System.in);
         int opcion = 0; //variable de control del menu
         System.out.println("Bienvenido al registro de llamadas");
         System.out.println("1.para introducir los datos de cada llamada");
         System.out.println("2.para salir del menu");
-
+            opcion= datos.nextInt();
         switch (opcion) {
             case 1:
                     do{
                         aux.generarLlamada();
                         registroAux.add(aux);
                         
-                    }while(registroAux.size()<4);
+                    }while(registroAux.size()<3);
                      
                 break;
             case 2:

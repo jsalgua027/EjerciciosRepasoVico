@@ -149,11 +149,11 @@ public class Llamada {
         this.identificativo = numeroId;
         System.out.println("Indique el número de  teléfono de origen");
         this.numeroOrigen = entrada.nextLine();
-        System.out.println("FECHA Y HORA ORIGEN");
+        System.out.println("FECHA Y HORA INICIO LLAMADA");
         this.inicioLlamada=generarFechaLlamada();
         System.out.println("Indique el número de teléfono de destino");
         this.numeroDestino=entrada.nextLine();
-         System.out.println("FECHA Y HORA DESTINO");
+         System.out.println("FECHA Y HORA FIN DE LLAMADA");
         this.finLlamda=generarFechaLlamada();
 
         return auxLlamada;
