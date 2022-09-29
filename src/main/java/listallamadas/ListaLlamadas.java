@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class ListaLlamadas {
 
-    private ArrayList<Llamada> registroLlamadas;
+    private ArrayList<Llamada> registroLlamadas = new ArrayList();
 
     public ListaLlamadas() {
     }
@@ -63,7 +63,7 @@ public class ListaLlamadas {
     //metodo que recibe llamada y generas una lista de llamadas
     public ArrayList<Llamada> generarRegistroLlamadas() {
         ArrayList<Llamada> registroAux = new ArrayList<>();
-       Llamada aux = new Llamada();
+      
         Scanner datos = new Scanner(System.in);
         int opcion = 0; //variable de control del menu
         System.out.println("Bienvenido al registro de llamadas");
@@ -73,10 +73,11 @@ public class ListaLlamadas {
         switch (opcion) {
             case 1:
                     do{
+                         Llamada aux = new Llamada();
                         aux.generarLlamada();
                         registroAux.add(aux);
                         
-                    }while(registroAux.size()<3);
+                    }while(registroAux.size()<1);
                      
                 break;
             case 2:

@@ -26,11 +26,11 @@ public class Prueba {
            
            agenda.generarRegistroLlamadas();
            
-//           for (int i = 0; i < agenda.size; i++) {
-//            
-//        }
+           for (int i = 0; i < agenda.getRegistroLlamadas().size(); i++) {
+            System.out.println(agenda.getRegistroLlamadas().toString()); 
+        }
           
-        System.out.println(agenda);    
+           
         
            
     }
