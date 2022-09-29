@@ -77,8 +77,10 @@ public class ListaLlamadas {
                         aux.generarLlamada();
                         registroAux.add(aux);
                         
-                    }while(registroAux.size()<1);
-                     
+                    }while(registroAux.size()<2);
+                     for (Llamada llamada : registroAux) {
+                         System.out.println(registroAux.toString());
+                }
                 break;
             case 2:
                 System.out.println("A seleccionado salir del menu");

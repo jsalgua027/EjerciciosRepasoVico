@@ -18,21 +18,10 @@ public class Prueba {
      */
     public static void main(String[] args) {
 
-        
-         //  Llamada uno = new Llamada();
-           
-//           uno.generarLlamada();
-           ListaLlamadas agenda = new ListaLlamadas();
-           
-           agenda.generarRegistroLlamadas();
-           
-           for (int i = 0; i < agenda.getRegistroLlamadas().size(); i++) {
-            System.out.println(agenda.getRegistroLlamadas().toString()); 
-        }
-          
-           
-        
-           
+        ListaLlamadas agenda = new ListaLlamadas();
+
+        agenda.generarRegistroLlamadas();
+
     }
 
 }
