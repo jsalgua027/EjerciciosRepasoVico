@@ -4,6 +4,7 @@
  */
 package listallamadas;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.Objects;
@@ -23,18 +24,26 @@ public class Llamada {
     private String numeroDestino;
     private LocalDateTime inicioLlamada;
     private LocalDateTime finLlamda;
-
-    public Llamada(int identificativo, String numeroOrigen, String numeroDestino, LocalDateTime inicioLlamada, LocalDateTime finLlamda) {
+    private long totalLlamada;
+    
+    public Llamada(int identificativo, String numeroOrigen, String numeroDestino, LocalDateTime inicioLlamada, LocalDateTime finLlamda, long totalLlamada) {
         this.identificativo = (int) (Math.random() * 50 + 1);
         this.numeroOrigen = numeroOrigen;
         this.numeroDestino = numeroDestino;
         this.inicioLlamada = inicioLlamada;
         this.finLlamda = finLlamda;
+        this.totalLlamada=totalLlamada;
     }
 
     public Llamada() {
     }
 
+    public long getTotalLlamada() {
+        return totalLlamada;
+    }
+    
+    
+    
     public int getIdentificativo() {
         return identificativo;
     }
@@ -112,11 +121,14 @@ public class Llamada {
         }
         return Objects.equals(this.finLlamda, other.finLlamda);
     }
+        
 
     @Override
     public String toString() {
-        return "Llamada{" + "identificativo=" + identificativo + ", numeroOrigen=" + numeroOrigen + ", numeroDestino=" + numeroDestino + ", inicioLlamada=" + inicioLlamada + ", finLlamda=" + finLlamda + '}';
+        return "Llamada{" + "identificativo=" + identificativo + ", numeroOrigen=" + numeroOrigen + ", numeroDestino=" + numeroDestino + ", inicioLlamada=" + inicioLlamada + ", finLlamda=" + finLlamda + ", totalLlamada=" + getTotalLlamada()+ '}';
     }
+
+   
         // el método generarFechaLlamada genera sirve para generar las fechas y horas que necesito para generar las llamadas
     public LocalDateTime generarFechaLlamada() {
         Scanner datos = new Scanner(System.in);
@@ -155,7 +167,7 @@ public class Llamada {
         this.numeroDestino=entrada.nextLine();
          System.out.println("FECHA Y HORA FIN DE LLAMADA");
         this.finLlamda=generarFechaLlamada();
-
+        this.totalLlamada= Duration.between(inicioLlamada, finLlamda).toSeconds();
         return auxLlamada;
 
     }

@@ -6,7 +6,7 @@ package listallamadas;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.util.stream.Collectors;
 /**
  *
  * @author nacho
@@ -18,9 +18,18 @@ public class Prueba {
      */
     public static void main(String[] args) {
 
-        ListaLlamadas agenda = new ListaLlamadas();
+        ListaLlamadas agenda = new  ListaLlamadas();
 
         agenda.generarRegistroLlamadas();
+         
+        System.out.println("------- LISTA ORDENADA POR FECHA tiempoTotal de llamada -------");
+        agenda.generarRegistroLlamadas().stream()
+                .sorted((p1,p2)->(int)p1.getTotalLlamada()-(int)p2.getTotalLlamada());
+                
+        for (int i = 0; i < agenda.generarRegistroLlamadas().size(); i++) {
+            System.out.println(agenda.getRegistroLlamadas().toString()); 
+        }
+        
 
     }
 

@@ -77,7 +77,7 @@ public class ListaLlamadas {
                         aux.generarLlamada();
                         registroAux.add(aux);
                         
-                    }while(registroAux.size()<2);
+                    }while(registroAux.size()<1);
                      for (Llamada llamada : registroAux) {
                          System.out.println(registroAux.toString());
                 }
