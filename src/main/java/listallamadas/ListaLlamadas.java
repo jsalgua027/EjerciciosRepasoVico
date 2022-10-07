@@ -86,6 +86,7 @@ public class ListaLlamadas {
                 System.out.println("A seleccionado salir del menu");
                 break;
         }
+        
 
         return registroAux;
     }

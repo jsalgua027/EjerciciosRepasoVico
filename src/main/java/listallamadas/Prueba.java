@@ -20,17 +20,18 @@ public class Prueba {
 
         ListaLlamadas agenda = new  ListaLlamadas();
 
-        agenda.generarRegistroLlamadas();
+        agenda.setRegistroLlamadas(agenda.generarRegistroLlamadas());
          
         System.out.println("------- LISTA ORDENADA POR FECHA tiempoTotal de llamada -------");
         agenda.generarRegistroLlamadas().stream()
                 .sorted((p1,p2)->(int)p1.getTotalLlamada()-(int)p2.getTotalLlamada());
                 
-        for (int i = 0; i < agenda.generarRegistroLlamadas().size(); i++) {
-            System.out.println(agenda.getRegistroLlamadas().toString()); 
+      
+        for (int i = 0; i < agenda.getRegistroLlamadas().size(); i++) {
+            System.out.println(agenda.getRegistroLlamadas().get(i).toString());
         }
-        
+   
 
+    
     }
-
 }
